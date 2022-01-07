@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import Dialogs from './Components/Dialogs/Dialogs';
 import Header from './Components/Header/Header';
 import Navbar from './Components/Navbar/Navbar';
 import Profile from './Components/Profile/Profile';
@@ -9,8 +10,12 @@ const App = () => {
     <div className='app-wrapper'>
       <Header />
       <Navbar />
-      <Profile />
+      <div class='app-wrapper-content'>
+        <Dialogs />
+      </div>
+      {/* <Profile /> */}
     </div>
+
   );
 }
 

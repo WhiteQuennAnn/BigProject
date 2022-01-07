@@ -4,7 +4,7 @@ import MyPosts from './MyPosts/MyPosts';
 
 const Profile = () => {
   return (
-    <div className={s.content}>
+    <div>
       <div>
         <img src='https://www.immune-image.eu/wp-content/uploads/2020/01/publications-immune-image.jpg' />
       </div>
@@ -12,10 +12,8 @@ const Profile = () => {
         ava + description
       </div>
       <MyPosts />
-      <MyPosts />
-      <MyPosts />
-      <MyPosts />
-      <MyPosts />
+      
+     
     </div>
   )
 }
