@@ -13,10 +13,9 @@ grid-template-areas:
 }
 
 .app-wrapper-content {
-         grid-area: c;
+      grid-area: c;
       background-color: slateblue;
-    
-    
+       
 }
 
 
