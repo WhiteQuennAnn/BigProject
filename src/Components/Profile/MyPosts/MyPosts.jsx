@@ -9,9 +9,9 @@ const MyPosts = (props) => {
   let newPostElement = React.createRef();
 
   let addPost = () => {
-      
+            
     let text =  newPostElement.current.value;
-    alert(text);
+    props.addPost (text);
   }
 
   return <div className={s.postsBlock}>
