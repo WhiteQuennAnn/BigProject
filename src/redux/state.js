@@ -25,9 +25,6 @@ dialogsPage: {
         { id: 6, name: 'Vladimir' },
       ],
 }
-sidebar: {
-    
-}
     }
   export default state;
   
