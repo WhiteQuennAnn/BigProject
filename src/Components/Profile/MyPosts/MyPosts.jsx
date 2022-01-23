@@ -28,8 +28,6 @@ const MyPosts = (props) => {
 
       {postsElements}
 
-
-
     </div>
   </div>
 }
