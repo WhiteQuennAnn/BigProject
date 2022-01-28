@@ -7,6 +7,7 @@ let state = {
       { id: 3, message: 'dadada', likesCount: 12 },
       { id: 4, message: 'hihihi', likesCount: 29 },
     ],
+    
     newPostText: 'WOAnn',
     
   },
@@ -27,25 +28,69 @@ let state = {
       { id: 5, name: 'Ivan' },
       { id: 6, name: 'Vladimir' },
     ],
-  }
+
+
+    message: 'White Queen',
+      },
+  };
+  window.state = state;
+ export let addPost = () => {
+  state.profilePage.text = newText;
+  renderEntireTree(state);
 };
 
-export let addPost = () => {
+export let addMessage = () => {
+  let newMessage = {
+    id: 6 ,
+    message: state.messagePage.message,
 
-  let newPost = {
-    id: 5,
-    message: state.profilePage.newPostText,
-    likesCount: 0
   };
 
-  state.profilePage.posts.push(newPost);
-  state.profilePage.newPostText = ' ';
-  rerenderEntireTree(state);
+  state.messagePage.messages.push(newMessage);
+  state.messagePage.message ='';
+  renderEntireTree(state);
 };
+   export let updateNewMessage = (updateMessage) => {
+   state.messagePage.message = updateMessage;
+   renderEntireTree(state);
+   };
 
-export let updateNewPostText = (newText) => {
-  state.profilePage.newPostNext = newText;
-  rerenderEntireTree(state);
-};
-
+renderEntireTree(state);
 export default state;
+//   }
+// };
+// window.state = state;
+// export let addPost = () => {
+
+//   let newPost = {
+//     id: 5,
+//     message: state.profilePage.newPostText,
+//     likesCount: 0
+//   };
+
+//   state.profilePage.posts.push(newPost);
+//   state.profilePage.newPostText = ' ';
+//   rerenderEntireTree(state);
+// };
+
+// export let updateNewPostText = (newText) => {
+//   state.profilePage.newPostNext = newText;
+//   rerenderEntireTree(state);
+// };
+// export let addMessage = () => {
+//   let newMessage = {
+//     id: 6 ,
+//     message: state.messagePage.message,
+
+//   };
+
+//   state.messagePage.messages.push(newMessage);
+//   state.messagePage.message ='';
+//   renderEntireTree(state);
+// };
+//    export let updateNewMessage = (updateMessage) => {
+//    state.messagePage.message = updateMessage;
+   
+//    };
+
+// export default state;
