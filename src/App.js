@@ -18,28 +18,22 @@ const App = (props) => {
         <Navbar />
         <div className='app-wrapper-content'>
           <Routes>
-            {/* <Route path="/dialogs"
-              element={<Dialogs state={props.state.dialogsPage} />} /> */}
-            <Route path='/dialogs' render={() => <Dialogs dialogs={props.dialogs} messages={props.messages} message={props.message}
-                    addMessage={props.addMessage} updateNewMessage={props.updateNewMessage}/>}/>
-            
-            
+            <Route path="/dialogs"
+              element={<Dialogs state={props.state.dialogsPage} />} />
             <Route path="/profile"
               element={<Profile
                 profilePage={props.state.profilePage}
-                addPost={props.addPost} 
+                addPost={props.addPost}
                 updateNewPostText={props.updateNewPostText} />} />
             <Route path="/music" element={<Music />} />
             <Route path="/news" element={<News />} />
             <Route path="/settings" element={<Settings />} />
-
           </Routes>
         </div>
       </div>
     </BrowserRouter>
   );
 }
-
 export default App;
 
 
