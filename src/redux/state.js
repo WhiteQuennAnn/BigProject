@@ -1,5 +1,6 @@
 let store = {
-  _state : {
+
+  _state: {
     profilePage: {
       posts: [
         { id: 1, message: 'Hi, how are you?', likesCount: 35 },
@@ -7,7 +8,7 @@ let store = {
         { id: 3, message: 'dadada', likesCount: 12 },
         { id: 4, message: 'hihihi', likesCount: 29 },
       ],
-       newPostText: 'Annushka',
+      newPostText: 'Annushka',
     },
     dialogsPage: {
       messages: [
@@ -26,37 +27,38 @@ let store = {
         { id: 5, name: 'Ivan' },
         { id: 6, name: 'Vladimir' },
       ],
-  
-  
+
+
       message: 'White Queen',
     }
+  },
+  _callSubscriber() {
+    console.log('State changed');
   },
   getstate() {
     return this._state;
   },
-  _callSubscriber () {
-    console.log ('State changed');
+  subcribe(observer) {
+    this._callSubscriber = observer;
   },
-  addPost () {
 
-    let newPost = {
-      id: 5,
-      message: this._state.profilePage.newPostText,
-      likesCount: 231
-    };
-  
-    this._state.profilePage.posts.push(newPost);
-    this._state.profilePage.newPostText = '';
-    this._callSubscriber(this._state);
-  },
- updateNewPostText (newText) {
-  
-  this._state.profilePage.newPostText = newText;
-  this._callSubscriber(this._state);
-},
-subcribe (observer) {
-  this._callSubscriber = observer;
+  dispatch(action) {
+    if (action.type === 'ADD-POST') {
+      let newPost = {
+        id: 5,
+        message: this._state.profilePage.newPostText,
+        likesCount: 231
+      };
+      this._state.profilePage.posts.push(newPost);
+      this._state.profilePage.newPostText = '';
+      this._callSubscriber(this._state);
+    } else if (action.type === 'UPDATE-NEW-POST-TEXT') {
+      this._state.profilePage.newPostText = action.newText;
+      this._callSubscriber(this._state);
+    }
   }
+
 }
 export default store;
 window.store = store;
+
